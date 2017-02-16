@@ -1,2 +1,2 @@
 # BDSM
-B..DevelopmentStyleManeger
+B..DevelopmentStyleManager
