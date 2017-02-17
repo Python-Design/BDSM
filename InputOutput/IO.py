@@ -56,6 +56,9 @@ def title(title_text, align='mid', style='', manual=False):  # example: style='+
             print('\t', title_text)
         elif align == 'right':
             print('\t\t\t', title_text)
+    else:
+        print(' '*align, title_text)
+
 
 # Makes table
 # column_titles can be array of names like ['A1','A2']
@@ -152,3 +155,14 @@ def table(data=[], data_types=[], column_names=[]):
         print('Кол-во навзаний столбцов не равно кол-ву столбцов')
 
 
+# bprint is like orignial print(), but with customizable tail and integer part for float + ending
+def bprint(*args, integer=3 ,tail=7, ending=' '):
+    if len(args) == 0:
+        print()
+    else:
+        for i in args:
+            if check(i, float):
+                size = '{:'+str(integer)+'.'+str(tail)+'f}'
+                print(size.format(i), end=ending)
+            else:
+                print(i, end=ending)
