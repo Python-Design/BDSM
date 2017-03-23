@@ -37,11 +37,11 @@ def check(value, needtype, showmessage=''):
 
 # input_massage - приглашение на ввод, vtype - тип необходимой переменой
 def binput(vtype, input_massage=''):
-    value = input(input_massage)
-    if check(value, vtype, False):
+    try:
+        value = vtype(input(input_massage))
         return value
-    else:
-        return check(value, vtype, True)
+    except:
+        pass
 
 
 ''' Output '''
